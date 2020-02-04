@@ -7,6 +7,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Get rego file
         run: curl https://raw.githubusercontent.com/naquada/deprek8/master/policy/deprek8.rego > $HOME/deprek8.rego
+      - run: ls $HOME
       - name: Check specific file for deprecation
         uses: instrumenta/conftest-action@master
         with:
