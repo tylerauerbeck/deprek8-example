@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: Poke the filesystem
+        run: ls / && ls /github && ls /github/home/
       - name: Get rego file
         run: curl https://raw.githubusercontent.com/naquada/deprek8/master/policy/deprek8.rego > /github/home/deprek8.rego
       - name: Verify rego file was retrieved
