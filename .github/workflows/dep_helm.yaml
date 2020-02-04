@@ -10,7 +10,7 @@ jobs:
         with:
           args: https://raw.githubusercontent.com/naquada/deprek8/master/policy/deprek8.rego > /github/home/deprek8.rego
       - name: Check helm chart for deprecation
-        uses: instrumenta/conftest-action@master
+        uses: instrumenta/conftest-action/helm@master
         with:
           chart: prometheus 
           policy: /github/home/deprek8.rego
