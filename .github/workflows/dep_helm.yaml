@@ -14,3 +14,4 @@ jobs:
         with:
           chart: prometheus 
           policy: /github/home/deprek8.rego
+
