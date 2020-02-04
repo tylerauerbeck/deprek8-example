@@ -1,0 +1,16 @@
+on: pull_request
+name: API Deprecation Check
+jobs:
+  deprecation-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: curl
+        uses: wei/curl@master
+        with:
+          args: https://raw.githubusercontent.com/naquada/deprek8/master/policy/deprek8.rego > /github/home/deprek8.rego
+      - name: Check helm chart for deprecation
+        uses: instrumenta/conftest-action@master
+        with:
+          chart: prometheus
+          policy: /github/home/deprek8.rego

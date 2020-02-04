@@ -14,8 +14,3 @@ jobs:
         with:
           files: statefulset.yaml
           policy: /github/home/deprek8.rego
-      - name: Check helm chart for deprecation
-        uses: instrumenta/conftest-action@master
-        with:
-          chart: prometheus
-          policy: /github/home/deprek8.rego
