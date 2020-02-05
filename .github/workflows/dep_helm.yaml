@@ -12,6 +12,6 @@ jobs:
       - name: Check helm chart for deprecation
         uses: instrumenta/conftest-action/helm@master
         with:
-          chart: prometheus 
+          chart: nginx-test 
           policy: /github/home/deprek8.rego
 
